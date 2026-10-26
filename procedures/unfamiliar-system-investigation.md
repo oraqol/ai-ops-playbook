@@ -1,5 +1,14 @@
 # Unfamiliar-system investigation and incident causality
 
+| At a glance | |
+|---|---|
+| **When to use** | Before changing or retiring a system you do not own |
+| **Impact if mishandled** | Breaking unknown consumers; acting on unconfirmed ownership |
+| **Risk level** | Low (discovery only) |
+| **Approval required** | Service, platform, and dependency owners confirm before destructive work |
+| **Escalate to** | Service owner, then platform owner |
+| **Last reviewed** | 2026-10 |
+
 ## Discovery sequence (AI-assisted)
 
 Use this exact sequence before touching a system you do not own:

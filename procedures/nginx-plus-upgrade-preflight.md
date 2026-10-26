@@ -1,5 +1,14 @@
 # NGINX Plus upgrade preflight (R33+ licensing, R37 upstream memory)
 
+| At a glance | |
+|---|---|
+| **When to use** | Upgrading NGINX Plus across licensing or shared-memory changes |
+| **Impact if mishandled** | Failed package install or upstream memory exhaustion at reload |
+| **Risk level** | High (edge traffic) |
+| **Approval required** | Change approval for the upgrade and canary plan |
+| **Escalate to** | Load-balancer platform owner |
+| **Last reviewed** | 2026-10 |
+
 Before moving an NGINX Plus R32 host to an R33+ configuration-management branch:
 
 1. Confirm `/etc/nginx/license.jwt` exists, is non-empty, owned by `root:root`, and mode `0600`.

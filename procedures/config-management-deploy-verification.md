@@ -1,5 +1,14 @@
 # Verifying configuration-management deployments (including AI-agent branches)
 
+| At a glance | |
+|---|---|
+| **When to use** | A change, including an AI-agent branch, "should be live" but is not |
+| **Impact if mishandled** | Believing a fix is deployed when the fleet still runs old config |
+| **Risk level** | Low (read-only verification) |
+| **Approval required** | None to verify; normal change approval to push |
+| **Escalate to** | Config-management/pipeline owner |
+| **Last reviewed** | 2026-10 |
+
 A green pipeline is not proof that a change reached the fleet. This matters most for branches opened by
 AI coding agents, which may use naming conventions the deployment tooling silently ignores.
 

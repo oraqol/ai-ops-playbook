@@ -1,6 +1,15 @@
-# <Procedure name>
+# `<Procedure name>`
 
-**Evidence:** <incident/ticket reference, date, retained artifacts>
+| At a glance | |
+|---|---|
+| **When to use** | `<trigger>` |
+| **Impact if mishandled** | `<what goes wrong if done badly>` |
+| **Risk level** | `<Low / Medium / High>` |
+| **Approval required** | `<who approves, where recorded>` |
+| **Escalate to** | `<owner role>` |
+| **Last reviewed** | `<YYYY-MM>` |
+
+**Evidence:** `<incident/ticket reference, date, retained artifacts>`
 
 ## Failure signature
 

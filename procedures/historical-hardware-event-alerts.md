@@ -1,5 +1,14 @@
 # Historical hardware-event alerts: archive, canary, and recover the real monitoring state
 
+| At a glance | |
+|---|---|
+| **When to use** | Hardware checks stay CRITICAL on hardware that is currently healthy |
+| **Impact if mishandled** | Erasing evidence of a real fault; repeated incident churn |
+| **Risk level** | High (irreversible log deletion) |
+| **Approval required** | Explicit approval per host for the clear; no carry-forward from prior cases |
+| **Escalate to** | Operations on-call; plugin and runbook owners |
+| **Last reviewed** | 2026-10 |
+
 Some hardware checks (for example, a Nagios plugin reading the IPMI System Event Log) latch on old
 asserted events and keep alerting CRITICAL on healthy hardware. In one real case, six hosts' incidents
 reopened repeatedly after incident-only mitigation. Clearing the archived historical SEL events

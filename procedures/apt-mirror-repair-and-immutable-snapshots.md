@@ -1,5 +1,14 @@
 # APT mirror repair and immutable snapshotting
 
+| At a glance | |
+|---|---|
+| **When to use** | A mirrored package is zero-byte, missing, or checksum-invalid |
+| **Impact if mishandled** | Broken package frozen into a snapshot and installed fleet-wide |
+| **Risk level** | Medium (shared repository) |
+| **Approval required** | Ticket authorizing the snapshot; separate approval to move any mutable marker |
+| **Escalate to** | Mirror/package repository owner |
+| **Last reviewed** | 2026-10 |
+
 Use this procedure when an internal APT mirror (for example, of NodeSource) contains a zero-byte or
 checksum-invalid package and a new pinned snapshot is required.
 

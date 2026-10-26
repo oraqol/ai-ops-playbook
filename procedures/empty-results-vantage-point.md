@@ -1,5 +1,14 @@
 # Empty results are a vantage-point claim, not a fact
 
+| At a glance | |
+|---|---|
+| **When to use** | Any "not found", "unreachable", or zero-row result |
+| **Impact if mishandled** | False outage declarations, missed assets, wrong escalation |
+| **Risk level** | Low (read-only) |
+| **Approval required** | None |
+| **Escalate to** | Network/VPN owners for missing routes |
+| **Last reviewed** | 2026-10 |
+
 A "not found", "unreachable", or zero-row result usually describes where you queried from, not what
 exists. This applies equally to commands you run and to answers an AI agent gives you. Before
 concluding absence:

@@ -1,5 +1,14 @@
 # Containerized daemons and resource limits
 
+| At a glance | |
+|---|---|
+| **When to use** | A containerized service degrades or drops work under load |
+| **Impact if mishandled** | Silent request loss; hotfix reverted by config management |
+| **Risk level** | Medium (service restart) |
+| **Approval required** | Service owner for restart; config-management change for the permanent fix |
+| **Escalate to** | Service owner; config-management module owner |
+| **Last reviewed** | 2026-10 |
+
 When a containerized service misbehaves under load, check inherited limits before tuning the
 application.
 

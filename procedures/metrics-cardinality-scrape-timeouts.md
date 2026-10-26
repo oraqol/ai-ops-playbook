@@ -1,5 +1,14 @@
 # Metrics scrape timeouts caused by label cardinality
 
+| At a glance | |
+|---|---|
+| **When to use** | Scrapes fail or time out while pods look healthy |
+| **Impact if mishandled** | False outage alerts; restart masks an unfixed code defect |
+| **Risk level** | Medium (production restart) |
+| **Approval required** | Incident owner and service owner, scoped to one deployment-managed restart |
+| **Escalate to** | Service code owner; image/release owner |
+| **Last reviewed** | 2026-10 |
+
 A failed `up{app="<service>"}` scrape is not proof the service is down. In one real incident a
 forwarder's Prometheus metrics retained raw unmatched/404 request paths in histogram labels. Those
 labels accounted for over 99.9% of samples, and scrapes alternated with ten-second timeouts at

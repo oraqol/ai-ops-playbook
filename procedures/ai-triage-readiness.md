@@ -1,5 +1,14 @@
 # Production readiness for AI incident triage
 
+| At a glance | |
+|---|---|
+| **When to use** | Before enabling an AI agent on an on-call incident queue |
+| **Impact if mishandled** | Agent fails silently or runs under a personal identity |
+| **Risk level** | Medium (credential handling) |
+| **Approval required** | Automation owner provisions the non-personal credential |
+| **Escalate to** | Automation platform owner |
+| **Last reviewed** | 2026-10 |
+
 Before enabling an AI agent (for example, a CLI coding agent driven by an incident-triage bot) to
 investigate incidents for an on-call queue:
 

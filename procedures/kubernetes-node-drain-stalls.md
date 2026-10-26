@@ -1,5 +1,14 @@
 # Runbook-automation execution and stalled Kubernetes drains
 
+| At a glance | |
+|---|---|
+| **When to use** | An automated cordon-and-drain does not finish |
+| **Impact if mishandled** | Evicted workloads without capacity; forced deletion of live pods |
+| **Risk level** | High (force deletion possible) |
+| **Approval required** | Approved change that explicitly includes forced drain |
+| **Escalate to** | Cluster owner; workload owner for unmanaged pods |
+| **Last reviewed** | 2026-10 |
+
 ## Before requesting credentials for a runbook-automation API
 
 1. From the intended execution host, resolve the API endpoint and make a read-only probe. A

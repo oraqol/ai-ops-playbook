@@ -1,5 +1,14 @@
 # Bare-metal wipe and reimage gates
 
+| At a glance | |
+|---|---|
+| **When to use** | Sequential wipe, reimage, or retirement of physical hosts |
+| **Impact if mishandled** | Data loss or wrong host wiped; network left half-configured |
+| **Risk level** | High (destructive, irreversible) |
+| **Approval required** | Change record covering profile, wipe, and IP handling |
+| **Escalate to** | Bare-metal/provisioning owner; network owner |
+| **Last reviewed** | 2026-10 |
+
 ## Before each host
 
 1. Query the provisioning system by device ID and record active/monitored flags, IP, kickstart profile,

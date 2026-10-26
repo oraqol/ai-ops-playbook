@@ -1,5 +1,14 @@
 # Verifying AI-generated root causes
 
+| At a glance | |
+|---|---|
+| **When to use** | An AI SRE agent or triage bot reports a root cause or remediation |
+| **Impact if mishandled** | Wrong fix applied, incident recurs, on-call misled |
+| **Risk level** | Low (read-only measurement) |
+| **Approval required** | None to investigate; normal change approval for any fix |
+| **Escalate to** | Agent/tool owners for false claims; service owner for the real cause |
+| **Last reviewed** | 2026-10 |
+
 AI SRE agents and automated triage bots can emit confident root causes even when they could not reach
 the host. Treat an unverified cause as a hypothesis, not a finding.
 
