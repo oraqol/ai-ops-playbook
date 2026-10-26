@@ -33,6 +33,25 @@ corrections that fixed them.
 7. **Every proven fix becomes a procedure** with its failure signature, safe conditions, verification,
    and the cases where it must not be used.
 
+## How an AI finding becomes an action
+
+```mermaid
+flowchart TD
+    A[AI agent reports a root cause] --> B{Did the agent actually<br/>reach the system?}
+    B -- No --> C[Label: could not verify<br/>Treat as hypothesis]
+    B -- Yes --> D[Re-measure from first principles<br/>on the host]
+    C --> D
+    D --> E{Does the evidence<br/>match the claim?}
+    E -- No --> F[Reject the claim<br/>Feed correction back to agent owners]
+    F --> D
+    E -- Yes --> G[State proven / likely / unknown]
+    G --> H{Destructive step?}
+    H -- No --> I[Execute read-only or reversible step<br/>and verify the resulting system]
+    H -- Yes --> J[Stop: explicit approval scoped to<br/>exact action, host, and window]
+    J --> I
+    I --> K[Record in ticket and encounter log<br/>Promote proven fix to a procedure]
+```
+
 ## Using it with an AI agent
 
 Copy [`AGENTS.md`](AGENTS.md) into a repository (or reference it from your agent's custom-instructions
@@ -48,7 +67,7 @@ file) and keep `PLAYBOOK.md` and `procedures/` alongside it. The agent will then
 An AI SRE agent attributed a recurring disk-full alert to journal growth and recommended
 `journalctl --vacuum-size`. Following [the verification procedure](procedures/ai-root-cause-verification.md):
 `journalctl --disk-usage` showed 8 MB; `/var/log/daemon.log` was 51 GB. The recommended fix would have
-reclaimed nothing and produced a fifth repeat incident. The real cause was fixed, and the agent's owners
+reclaimed nothing and produced a fifth repeat incident. The real cause was traced, and the agent's owners
 were asked to make it report "could not verify — no host access" instead of guessing.
 
 ## Scope and sanitization
@@ -63,4 +82,5 @@ them to your own environment, change process, and authorization rules.
 
 ## Author
 
-Johan M. Giraldo — infrastructure and site reliability engineer.
+Johan M. Giraldo — infrastructure and site reliability engineer ·
+[oraqol@gmail.com](mailto:oraqol@gmail.com)
