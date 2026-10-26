@@ -1,0 +1,9 @@
+{
+  // Rules tuned for long-form operational documentation.
+  "config": {
+    "default": true,
+    "MD013": false,                      // line length: prose is wrapped for readability, tables are not
+    "MD024": { "siblings_only": true }   // repeated "Warning signs"/"Required method" under different patterns
+  },
+  "ignores": ["LICENSE"]
+}
